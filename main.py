@@ -7,7 +7,7 @@ from tkinter import messagebox
 objects = []
 window = Tk()
 window.withdraw()
-window.title('Email Storage')
+window.title('Epost Lagring')
 
 class popupWindow(object):
 
@@ -110,10 +110,10 @@ class entity_display:
             else:
                 dencryptedP += chr(ord(letter) - 5)
 
-        self.label_name = Label(self.window, text=dencryptedN, font=('Courier', 14))
-        self.label_email = Label(self.window, text=dencryptedE, font=('Courier', 14))
-        self.label_pass = Label(self.window, text=dencryptedP, font=('Courier', 14))
-        self.deleteButton = Button(self.window, text='X', fg='red', command=self.delete)
+        self.label_name = Label(self.window, text=dencryptedN, font=('Arial', 12))
+        self.label_email = Label(self.window, text=dencryptedE, font=('Arial', 12))
+        self.label_pass = Label(self.window, text=dencryptedP, font=('Arial', 12))
+        self.deleteButton = Button(self.window, text='X', fg='orange', command=self.delete)
 
     def display(self):
         self.label_name.grid(row=6 + self.i, sticky=W)
@@ -122,7 +122,7 @@ class entity_display:
         self.deleteButton.grid(row=6 + self.i, column=3, sticky=E)
 
     def delete(self):
-        answer = tkinter.messagebox.askquestion('Delete', 'Are you sure you want to delete this entry?')
+        answer = tkinter.messagebox.askquestion('Radera', 'Är du säker att du vill radera detta?')
 
         if answer == 'yes':
             for i in objects:
@@ -162,7 +162,7 @@ def onsubmit():
     name.delete(0, 'end')
     email.delete(0, 'end')
     password.delete(0, 'end')
-    messagebox.showinfo('Added Entity', 'Successfully Added, \n' + 'Name: ' + n + '\nEmail: ' + m + '\nPassword: ' + p)
+    messagebox.showinfo('Klart', 'Den här informationen har laggts till, \n' + 'Namn: ' + n + '\nEmail: ' + m + '\nLösenord: ' + p)
     readfile()
 
 
@@ -188,14 +188,14 @@ def readfile():
 
 m = popupWindow(window)
 
-entity_label = Label(window, text='Add Entity', font=('Courier', 18))
-name_label = Label(window, text='Name: ', font=('Courier', 14))
-email_label = Label(window, text='Email: ', font=('Courier', 14))
-pass_label = Label(window, text='Password: ', font=('Courier', 14))
-name = Entry(window, font=('Courier', 14))
-email = Entry(window, font=('Courier', 14))
-password = Entry(window, show='*', font=('Courier', 14))
-submit = Button(window, text='Add Email', command=onsubmit, font=('Courier', 14))
+entity_label = Label(window, text='Lägg till info', font=('Arial', 14))
+name_label = Label(window, text='Namn: ', font=('Arial', 12))
+email_label = Label(window, text='Email: ', font=('Arial', 12))
+pass_label = Label(window, text='Lösenord: ', font=('Arial', 12))
+name = Entry(window, font=('Arial', 12))
+email = Entry(window, font=('Arial', 12))
+password = Entry(window, show='?', font=('Arial', 12))
+submit = Button(window, text='Lägg till Epost', command=onsubmit, font=('Arial', 12))
 
 entity_label.grid(columnspan=3, row=0)
 name_label.grid(row=1, sticky=E, padx=3)
@@ -208,9 +208,9 @@ password.grid(columnspan=3, row=3, column=1, padx=2, pady=2, sticky=W)
 
 submit.grid(columnspan=3, pady=4)
 
-name_label2 = Label(window, text='Name: ', font=('Courier', 14))
-email_label2 = Label(window, text='Email: ', font=('Courier', 14))
-pass_label2 = Label(window, text='Password: ', font=('Courier', 14))
+name_label2 = Label(window, text='Namn: ', font=('Arial', 12))
+email_label2 = Label(window, text='Email: ', font=('Arial', 12))
+pass_label2 = Label(window, text='Lösenord: ', font=('Arial', 12))
 
 name_label2.grid(row=5)
 email_label2.grid(row=5, column=1)

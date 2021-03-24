@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/check-if-email-address-valid-or-not-in-python/

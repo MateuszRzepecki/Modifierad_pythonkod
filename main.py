@@ -3,6 +3,9 @@ import re
 from tkinter import *
 from tkinter import messagebox
 
+# Email validation
+
+
 # ****** GLOBAL VARIABLES ******
 
 objects = []
